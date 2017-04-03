@@ -1,9 +1,6 @@
 # Tasks Roadmap gitignore
 
-# Local virtual environment
-venv/**
-
-# PyCharm files
+# Jetbrains editor files
 .idea/**
 
 # Caches
