@@ -2,7 +2,17 @@
 
 A simple interface for a team's or organization's tasks.
 
-## MIT License
+**Demo:** https://ireneu.github.io/roadmap/
+
+### Customization
+
+The title, description and team members for the roadmap live in `data/general.js`.
+
+Tasks are defined in `data/tasks.js`.
+
+Updating and adding data should be fairly simple, but a text editor that lints javascript may help!
+
+### MIT License
 
 Copyright 2017 Ireneu Pla
 
