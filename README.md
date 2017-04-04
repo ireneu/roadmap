@@ -1,14 +1,15 @@
 # Roadmap
 
-A simple interface for a team's or organization's tasks.
+A simple interface for a team's or organization's tasks (e.g. university association).
 
 **Demo:** https://ireneu.github.io/roadmap/
 
+No web server required. Roadmap can live on the local filesystem or in a shared folder (e.g. DropBox).
+
 ### Customization
 
-The title, description and team members for the roadmap live in `data/general.js`.
 
-Tasks are defined in `data/tasks.js`.
+The title, description and team members and tasks for the roadmap are in the `data.js` file.
 
 Updating and adding data should be fairly simple, but a text editor that lints javascript may help!
 
