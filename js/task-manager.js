@@ -84,7 +84,7 @@ function populatePeopleList() {
 function displayTasks(taskData) {
     for (var task in taskData) {
         monthPanels[taskData[task].month].append(
-            '<div class="panel panel-default task" style="background-color:' + taskData[task].person.color + '" data-person="' + taskData[task].person.name + '">' +
+            '<div class="panel panel-default task" style="background-color:' + (taskData[task].person.color || '#ffffff') + '" data-person="' + taskData[task].person.name + '">' +
                 '<div class="media panel-body">' +
                     '<div class="media-body">' +
                         '<span class="task-title">' + taskData[task].title + '</span> ' +

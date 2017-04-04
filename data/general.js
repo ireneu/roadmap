@@ -13,7 +13,6 @@ var team = {
         name: 'Salesman'
     },
     username: {
-        color: '#b3ffb3',
         name: 'Marketer'
     },
     pseudonym: {
