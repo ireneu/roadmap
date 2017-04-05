@@ -50,13 +50,13 @@ var tasksData = [
         month: 9,
         person: team.nickname,
         title: 'Newsletter design',
-        description: 'Start designing the newsletter template for the following year.'
+        description: 'Start designing the newsletter template for the following year. Check with @pseudonym.'
     },
     {
         month: 2,
         person: team.handle,
         title: 'Call resellers',
-        description: 'Call resellers in areas where newsletters received many clicks with special offers. Get the locality rankings for the previous month from the IT department. <br>Offer guidelines according to ranking evolution, ordered volume and current room temperature can be found on the internal server\'s offer folder.',
+        description: 'Call resellers in areas where newsletters received many clicks with special offers. Get the locality rankings for the previous month from the IT department. <br>Offer guidelines according to ranking evolution, ordered volume and current room temperature can be found on the internal server\'s offer folder.'
     },
     {
         month: 12,
