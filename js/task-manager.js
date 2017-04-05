@@ -90,7 +90,7 @@ function filterPerson(personName) {
 /** Duh! */
 function showAllPeople() {
     clearTasks();
-    displayTasks(tasksData);
+    displayTasks(JSONtasks.src);
 }
 
 /**
