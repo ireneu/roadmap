@@ -42,7 +42,8 @@ var team = {
  *  - month: integer from 1 to 12
  *  - person: team member assigned to the task
  *  - title: task title
- *  - description: general text/html task description
+ *  - description: general text/html task description.
+ *                 Team members can be tagged in description using @identifier notation (e.g. @nickname)
  *  - date: optional field if more precise date information is needed (e.g. 1st, 30th or second week)
  */
 var tasksData = [
