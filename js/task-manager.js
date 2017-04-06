@@ -109,8 +109,11 @@ function populatePeopleList(team) {
  */
 function generateTasksJSON() {
     var tasksJSON = JSON.parse(JSON.stringify(tasksData));
+    var counter = 0;
     for (var task in tasksJSON) {
-        tasksJSON[task].description = tasksJSON[task].description.replace(/(^|\s|\()@(\w+)($|\s|\.|\))/gi, function(match, before, username, after) { return before + '<em>' + team[username].name + '</em>' + after })
+        if (tasksJSON[task].description) tasksJSON[task].description = tasksJSON[task].description.replace(/(^|\s|\()@(\w+)($|\s|\.|\))/gi, function(match, before, username, after) { return before + '<em>' + team[username].name + '</em>' + after });
+        if (!tasksJSON[task].person) tasksJSON[task].person = {};
+        tasksJSON[task].taskId = counter++;
     }
     JSONtasks = Defiant.getSnapshot(tasksJSON);
 }
@@ -125,10 +128,14 @@ function renderTaskHTML(task) {
         '<div class="panel panel-default task" style="background-color:' + (task.person.color || '#ffffff') + '">' +
             '<div class="media panel-body">' +
                 '<div class="media-body">' +
-                    '<span class="task-title">' + task.title + '</span> ' +
-                    '<span class="task-person"> - ' + (task.person.name || '') + '</span> ' +
-                    '<span class="task-date">' + (task.date || '') + '</span><br />' +
-                    (task.description || '') +
+                    '<a class="task-toggle" href="#task' + task.taskId + '" data-toggle="collapse">' +
+                        '<span class="task-title">' + task.title + '</span> ' +
+                        '<span class="task-person">' + ( task.person.name || '') + '</span> ' +
+                        '<span class="task-date">' + (task.date || '') + ' <span class="caret"></span></span>' +
+                    '</a><br />' +
+                    '<div class="collapse" id="task' + task.taskId + '">' +
+                        (task.description || '') +
+                    '</div>' +
                 '</div>' +
             '</div>' +
         '</div>'

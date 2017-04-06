@@ -14,6 +14,7 @@
 .task-person {
     font-size: 1.4em;
     font-weight: 300;
+    margin-left: 0.5em;
 }
 
 .task-date {
@@ -21,4 +22,18 @@
     font-weight: 300;
     font-style: italic;
     float: right;
+}
+
+.task-toggle {
+    text-decoration: none;
+    color: black;
+}
+
+.task-toggle:hover {
+    text-decoration: none;
+}
+
+.task-toggle:focus {
+    text-decoration: none;
+    color: black;
 }
