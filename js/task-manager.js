@@ -110,7 +110,7 @@ function populatePeopleList(team) {
 function generateTasksJSON() {
     var tasksJSON = JSON.parse(JSON.stringify(tasksData));
     for (var task in tasksJSON) {
-        tasksJSON[task].description = tasksJSON[task].description.replace(/(^|\s)@(\w+)($|\s|\.)/gi, function(match, before, username, after) { return before + '<em>' + team[username].name + '</em>' + after })
+        tasksJSON[task].description = tasksJSON[task].description.replace(/(^|\s|\()@(\w+)($|\s|\.|\))/gi, function(match, before, username, after) { return before + '<em>' + team[username].name + '</em>' + after })
     }
     JSONtasks = Defiant.getSnapshot(tasksJSON);
 }
