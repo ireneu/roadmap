@@ -7,6 +7,7 @@
 
 // Useful variables.
 var monthNames = {
+    0: 'General',
     1: 'January',
     2: 'February',
     3: 'March',
@@ -18,7 +19,7 @@ var monthNames = {
     9: 'September',
     10: 'October',
     11: 'November',
-    12: 'December'
+    12: 'December',
 };
 
 var monthPanels = {}, monthCollapsers = {}, JSONtasks;
@@ -36,7 +37,7 @@ function setHeader(generalData) {
 function createMonthPanels() {
     var monthsContainer = $('#months');
     var filterMonthDropdown = $('#filter-month-dropdown');
-    for (var i = 1; i < 13; i++) {
+    for (var i in monthNames) {
         var monthContainerId = i;
         monthsContainer.append(
             '<div class="panel panel-default">' +
@@ -62,8 +63,8 @@ function createMonthPanels() {
  * @param {number} month - ideally between 1 and 12
  */
 function filterMonth(month) {
-    for (var i = 1; i < 13; i++) {
-        if (i === month) {
+    for (var i in monthNames) {
+        if (i == month) {
             monthCollapsers[i].collapse('show');
         } else {
             monthCollapsers[i].collapse('hide');
@@ -73,7 +74,7 @@ function filterMonth(month) {
 
 /** Uncollapses all month panels */
 function showAllMonths() {
-    for (var i = 1; i < 13; i++) { monthCollapsers[i].collapse('show'); }
+    for (var i in monthNames) { monthCollapsers[i].collapse('show'); }
 }
 
 /**
@@ -129,7 +130,7 @@ function renderTaskHTML(task) {
             '<div class="media panel-body">' +
                 '<div class="media-body">' +
                     '<a class="task-toggle" href="#task' + task.taskId + '" data-toggle="collapse">' +
-                        '<span class="task-title">' + task.title + '</span> ' +
+                        '<span class="task-title">' + (task.title || '') + '</span> ' +
                         '<span class="task-person">' + ( task.person.name || '') + '</span> ' +
                         '<span class="task-date">' + (task.date || '') + ' <span class="caret"></span></span>' +
                     '</a><br />' +
