@@ -60,7 +60,7 @@ var team = {
  * List of tasks for the roadmap.
  *
  * Each task can have the following fields:
- *  - month: integer from 1 to 12
+ *  - month: integer from 1 to 12 for each month. 0 for a general task, not associated to any particular month.
  *  - person: team member assigned to the task
  *  - title: task title
  *  - description: general text/html task description.
@@ -109,6 +109,17 @@ var tasksData = [
         '<code>Wimi > EPFL DAF</code>'
     },
     // tresorier
+    {
+        month: 0,
+        person: team.tresorier,
+        description: '<ul>' +
+            '<li>Gérer les comptes et les payements</li>' +
+            '<li>Faire écritures comptables</li>' +
+            '<li>Tenir à jour le budget de fonctionnement</li>' +
+            '<li>Communiquer et consulter le comité pour les réallocations, dépassements...</li>' +
+            '<li>Validation des nouvelles inscriptions</li>' +
+            '</ul>'
+    },
     {
         month: 8,
         date: '31 aout',
@@ -299,5 +310,5 @@ var tasksData = [
     {
         month: 11,
         title: 'Fin de saison'
-    },
+    }
 ];
